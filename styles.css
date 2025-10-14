@@ -33,7 +33,17 @@ body {
     margin-left: 11rem;
 
 }
+     /* HOVER effect */
+.links > a:hover {
+    background: #ffece1;
+    color: #381301;
+}    
 
+.flip > a:hover {
+    background-color: #381301;
+    color:#ffece1;
+} 
+    
 .links {
     display: flex;
     align-items: center;
