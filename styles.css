@@ -13,10 +13,10 @@
 body {
     background-color: #ffece1;
 }
-    
+    /* GRADIENT! GRADIENT!! GRADIENT!!! BACKGROUND */
 .house {
-    height: 104vh;
-    background: linear-gradient(110deg,  #ffece1 50%, #381301 50%);
+    height: 100vh;
+    background: linear-gradient(90deg,  #ffece1 50%, #381301 50%);
 }
         /* NAV BAR */
 .apartment {
@@ -29,16 +29,38 @@ body {
 }
 
 .logo > img {
+    border: solid 2px #381301;
+    border-radius: 5px;
     width: 60px;
-    margin-left: 11rem;
     margin-top: 1rem;
+
 }
      /* HOVER HOVER HOVER */
 .links > a:hover {
-    background: #ffece1;
-    color: #381301;
-}    
+    box-shadow: 0 0 25px rgba(204, 56, 56, 0.7);
+    transform: scale(1.09);
+    
+}  
 
+/* glowing underline setup */
+.links > a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #cc3838; /* warm glowing color */
+  box-shadow: 0 0 10px rgba(204, 56, 56, 0.7);
+  opacity: 0;
+  transition: width 0.4s ease, opacity 0.4s ease;
+}
+
+  /* underline animation on hover */
+.links > a:hover::after {
+  width: 100%;
+  opacity: 1;
+}
 .flip > a:hover {
     background-color: #381301;
     color:#ffece1;
@@ -85,30 +107,30 @@ body {
 }
       /* Container for Greetings, My name, status and social icons  and photo*/
 .room {
-    /* border: green solid 2px; */
+    /* border: green solid 1px; */
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     padding-bottom: 3rem;
 }
 
 .leftRoom {
-   /* border: red solid 2px; */
+   
    display: flex;
    flex-direction: column;
    align-items: center;
    justify-content: space-around;
    padding-top: 6rem;
-   margin-left: 5rem;
 }
       /* GREETINGS */
 .mydetails > span > p {
+    /* border: red solid 1px; */
     font-family: "Raleway", sans-serif;
-     font-size: 20px;
-     font-weight: 500;
-     color: #381301;
-    margin-left: 2.1rem;
-}
+    font-size: 20px;
+    font-weight: 500;
+    color: #381301;
+     margin-top: -4rem;
+    }
 
        /* my name */
 .mydetails > h1 {
@@ -116,8 +138,8 @@ body {
     font-family: "Raleway", sans-serif;
     font-weight: 600;
     font-size: 40px;
-    margin-left: 2rem;
-   
+    margin-left:-0.1rem;
+    margin-top: 2rem;
 }
         /* my profession */
 .mydetails > h5 {
@@ -128,20 +150,26 @@ body {
     opacity: 50%;
     font-size: 15px;
     margin-bottom: 1rem;
-    margin-left: 2.2rem;
 } 
       /* my social media handles */
 .icons {
     display: flex;
     gap: 10px;
-    margin-right: 5rem; 
+    margin-left: -7.2rem; 
 }
+
+.icons > a:hover {
+    box-shadow: 0 0 25px rgba(204, 56, 56, 0.7);
+    transform: scale(1.09);
+}
+    
 .icons > a {
     border: none;
     background-color: #f0cab4;
     border-radius: 10px;
     padding-inline: 1rem;
     padding-block: 0.5rem;
+    margin-top: 2rem;
 }
 
 .icons > a > img {
@@ -153,47 +181,69 @@ body {
     /* border: blue solid 2px; */
     width: 340x;
     height: 250px;
+    margin-right: 2rem;
     margin-bottom: -8rem;
 }
        /* short poet inspiration */
 .bannerWriteup {
+    /* border: solid red 2px; */
     background-color: #381301;
     width: 100%;
-    height: 40vh;
+    height: 34vh;
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items:center;
     justify-content: space-between;
     gap: 5px;
-    padding: 3rem;
-    padding-block: 2rem;
+    padding-block: 1.5rem;
 }
       /* TITLE HERO BOLD TEXT */
-    .bannerWriteup > h2 {
+.bannerWriteup > h2 {
        font-family: "Montserrat";
        font-size: 20px;
        font-weight: 600;
        color: #ffece1;
        margin-bottom: 2rem;
+       margin-right: 47%;
+       border-radius: 10px;
+       background: linear-gradient(145deg, #381301, #6b2b06); /* deep warm tones */
+       box-shadow: 0 0 15px rgba(165, 42, 42, 0.4);
+       padding: 10px 18px;
+       transition: box-shadow 0.3s ease, transform 0.3s ease;
     }
    
 .bannerWriteup > span {
     /* border: rgb(225, 255, 0) solid 2px; */
       color: #ffece1;
-      width: 950px;
+      width: 976px;
       font-family: "Open Sans", sans-serif; 
       font-weight: 600; 
       font-size: 12px;
       margin-top: -2rem;
+      margin-right: 4%;
+      background: linear-gradient(145deg, #381301, #6b2b06); /* deep warm tones */
+      box-shadow: 0 0 15px rgba(165, 42, 42, 0.4);             
+      padding: 10px 18px;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
-   
+.bannerWriteup > a:hover {
+    box-shadow: 0 0 25px rgba(165, 42, 42, 0.7);
+    transform: scale(1.09);
+}   
+
 .bannerWriteup > a {
+     /* border: rgb(225, 255, 0) solid 2px; */
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
     color: #ffece1;
     font-weight: 600;
     text-decoration: none;
+    margin-right: 71%;
+    background: linear-gradient(145deg, #381301, #6b2b06); /* deep warm tones */
+    box-shadow: 0 0 15px rgba(165, 42, 42, 0.4);             
+    padding: 10px 18px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
         /* ABOUT ME PAGE */
@@ -238,18 +288,16 @@ body {
       /* BOLD ABOUT ME AND EXPLORE BORDER */
 .me {
     /* border: blue 2px solid; */
+    width: 100%;
     height: 50vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 3rem;
-    gap: 2rem;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
-       /* BOLD ABOUT ME */
+       /* BOLD ABOUT ME LABEL*/
 .me > label {
-    /* border: blue solid 2p; */
-    margin-left: 24.5rem;
     border: 3px  #381301 solid;
     font-family: "Montserrat", sans-serif;
     font-size: 15px;
@@ -262,23 +310,40 @@ body {
    
        /* SOME WRITEUPS ABOUT ME */
 .me > span > p {
-    /* border: yellow 3px solid; */
+    border: brown 3px solid;
+    width: 180vh;
     font-family: "Open Sans", sans-serif;
     color:  #381301;
     font-weight: 600;
     font-size: 12px;
-     
+    border-radius: 10px;
+    background: linear-gradient(145deg, #ffece1, #f5d6b4); /* warm organic tone */
+    box-shadow: 0 0 15px rgba(165, 42, 42, 0.4); /* soft brown glow */
+    padding: 12px 18px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+ 
 }
 
       /* EXPLORE */
+.me > span > a:hover {
+    box-shadow: 0 0 30px rgba(247, 29, 29, 0.6);
+    transform: scale(1.3);
+}
+
 .me > span > a {
-    /* border: yellow 2px solid; */
+    /* border: rgb(255, 0, 157) 2px solid; */
      font-family: "Montserrat", sans-serif;
     font-size: 12px;
     color: #381301;
     font-weight: 600;
     text-decoration: none;
-    margin-left: 27rem;   
+    margin-left: -31.2rem;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #ffece1, #f5d6b4); /* warm organic tone */
+    box-shadow: 0 0 15px rgba(165, 42, 42, 0.4); /* soft brown glow */
+    padding: 15px 20px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    
 }
 
 .ability {
@@ -293,7 +358,8 @@ body {
     padding: 1rem;
 }
 .do > span > img {
-    border: solid 2px rgb(105, 255, 108);
+    border: solid #381301 2px;
+    border-radius: 5px;
     opacity: 65%;
 }
 
@@ -312,6 +378,12 @@ body {
     color:  #381301;
     font-weight: 600;
     font-size: 12px; 
+    border-radius: 10px;
+    background: linear-gradient(145deg, #ffece1, #f5d6b4); /* warm organic tone */
+    box-shadow: 0 0 15px rgba(165, 42, 42, 0.4); /* soft brown glow */
+    padding: 12px 18px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+ 
 }
 
        /* SKILLS PAGE */   /* SKILLS PAGE */
@@ -365,14 +437,21 @@ body {
     display: flex;
     justify-content: space-around;
     gap: 40px;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #ffece1, #f5d6b4); /* warm organic tone */
+    box-shadow: 0 0 15px rgba(165, 42, 42, 0.4); /* soft brown glow */
+    padding: 15px 20px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
     /* justify-content: */
 }
   
      /* BRRAND IMAGE */
  .currentContent > img {
-    border: green 3px solid;
+    border: rgb(128, 4, 0) 3px solid;
      border-radius: 10px;
      width: 50px;
+     height: 50px;
+     
  }   
      /* BRAND NAMES */
  .currentContent > h6 {
@@ -405,21 +484,16 @@ body {
    
 
 
-       /* PORTFOLIO */    /* PORTFOLIO */
+       /* PORTFOLIO */    /* PORTFOLIO */     /* PORTFOLIO */
 .theportfolio {
     background-image: url(./image/plain\ background\ with\ eco\ design.jpeg)
 }       
 .myPortfolio {
-    /* border: 3px red solid; */
-    padding-block: 5rem;
-    /* background-image: url(./image/lagos\ beach1.JPG); */
-    /* background-repeat: no-repeat; */
-    /* background-position: center; */
-    /* background-size: cover; */
     display: flex;
     align-items: center;
     justify-content: center;
-}       
+}  
+       BOLD PORTFOLIO LABEL     
 .myPortfolio > label {
     border: 3px #381301 solid;
     /* margin-top: 3rem; */
@@ -432,96 +506,68 @@ body {
     padding: 0.9rem 2rem;
     width: 160px;    
 }
-.graphics {
-    background-color: black;
-     font-family: "Montserrat", sans-serif;
-    font-size: 15px;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: #ffece1;
 
+                 /* PICTURES PICTURES PICTURES IN FLEX WRAP*/
+.image-gallery {
+  display: flex;
+  /* flex-wrap: wrap; */
+  gap: 20px;
+  justify-content: center;
 }
 
-.graphics > a {
-    color: #ffece1;
-    text-decoration: none;
-
-}
-/* ALL CODED DESIGNED */
-.highlight {
-    /* border: red solid 2px; */
-    background-color: black;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    color: #ffece1;
-    font-family: "Montserrat", sans-serif;
-    margin-bottom: 1rem;
+.image-card {
+  position: relative;
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(56, 19, 1, 0.2);
+  transition: transform 0.3s ease;
 }
 
-     /* 3D GRAPHICS IMAGE */
-.topbackdrop {
-    /* border: yellow solid 2px; */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 0rem;
-    
-}
-     /* GAS PLANT 3D IMAGE */
-.topbackdrop > img {
-    /* border: violet 3px solid; */
-    width: 480px;
-    height: 270px; 
-    /* border-bottom-left-radius: 30px; */
-}
-     /* MODERN HOUSE 3D IMAGE */
-.topbackdrop > img:last-child {
-    /* border: pink 4px solid; */
-    height: 270px;   
-}
-      /* LANDING PAGE DESIGNS */
-.portfolio {
-    display: flex;
-    align-items: center;
-    justify-content: space space-between;
-    gap: 36px;
-     margin-bottom: -1rem;
-     margin-top: -1rem;
-}
-     /* LANDING PAGE FIRST TWO SETS IMAGES */
-.portfolio > img {
-    width: 481px;
-    height: 245px; 
-    /* border-bottom-left-radius: 30px; */
-}
-    
-.portfoliotwo > img:nth-child(2) {
-    width: 995px;
-    height: 445px; 
-    /* margin-bottom: 2rem; */
+.image-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
-.portfoliotwo > label {
-    width: 995px;
-    height: 100px;
-    background-color: black;
-    border: black 3px solid;
-    display: flex;
-    align-items: center;
-    margin-top: 1rem;
+/* Caption overlay */
+.caption {
+  position: absolute;
+  left: 0;
+  bottom: -50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 236, 225, 0.4); /* warm tone with transparency */
+  backdrop-filter: blur(6px);
+  color: #381301;
+  padding: 15px;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: bottom 0.4s ease;
 }
-.portfoliotwo > img:last-child {
-    width: 995px;
-    height: 700px;
-    /* border-bottom-left-radius: 30px; */
-    margin-bottom: 2rem;
+
+/* Hover effect */
+.image-card:hover img {
+  transform: scale(1.05);
 }
+
+.image-card:hover .caption {
+  bottom: 0; /* slides up halfway */
+}
+
+.caption h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.caption p {
+  font-size: 13px;
+  margin-top: 6px;
+}
+
 
 .comingsoon {
     border: solid 3px #381301;
@@ -629,6 +675,12 @@ body {
     background: none;
 
 }
+
+.clientdetails textarea {
+    resize: none;
+    width: 17%;
+    box-sizing: border-box;
+}
 .clientdetails > button {
    /* border: rgb(255, 47, 193) solid 2px; */
    border: none;
@@ -695,3 +747,12 @@ body {
     color: #ffece1;
     border-radius: 2px;
  }
+
+ /* Fade-in effect for the success/error message */
+#formMessage {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out; /* smooth fade */
+}
+#formMessage.show {
+  opacity: 1;
+}
