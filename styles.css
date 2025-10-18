@@ -179,7 +179,7 @@ body {
      /* MY PHOTO */
 .rightRoom > img {
     /* border: blue solid 2px; */
-    width: 340x;
+    width: 315px;
     height: 250px;
     margin-right: 2rem;
     margin-bottom: -8rem;
@@ -489,9 +489,17 @@ body {
     background-image: url(./image/plain\ background\ with\ eco\ design.jpeg)
 }       
 .myPortfolio {
+     border: 3px #381301 solid;
     display: flex;
     align-items: center;
     justify-content: center;
+     font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    color: #381301;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.9rem 2rem;
+    width: 160px;    
 }  
        BOLD PORTFOLIO LABEL     
 .myPortfolio > label {
@@ -505,19 +513,23 @@ body {
     text-decoration: none;
     padding: 0.9rem 2rem;
     width: 160px;    
+    
 }
 
                  /* PICTURES PICTURES PICTURES IN FLEX WRAP*/
 .image-gallery {
-  display: flex;
-  /* flex-wrap: wrap; */
-  gap: 20px;
-  justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+    gap: 25px;
+    justify-items: center;
+    padding: 20px;
+
 }
 
 .image-card {
   position: relative;
-  width: 300px;
+  width: 100%;
+  max-width: 450px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(56, 19, 1, 0.2);
@@ -555,17 +567,18 @@ body {
 
 .image-card:hover .caption {
   bottom: 0; /* slides up halfway */
+  opacity: 1;
 }
 
 .caption h3 {
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
 }
 
 .caption p {
-  font-size: 13px;
-  margin-top: 6px;
+  font-size: 14px;
+  margin-top: 8px;
 }
 
 
