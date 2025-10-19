@@ -345,9 +345,9 @@ body {
     background-image: url(./image/plain\ background\ with\ eco\ design.jpeg);
     height: 100vh;
     color: #ffece1;
-  padding: 4rem 0;
-  border-radius: 10px;
-  box-shadow: 0 0 25px rgba(56, 19, 1, 0.5);
+    padding: 4rem 0;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(56, 19, 1, 0.5);
 }
       
       /* BOLD ABOUT ME AND EXPLORE BORDER */
@@ -357,6 +357,13 @@ body {
    padding: 2rem;
 }
 
+/* About Me Section Alignment and Responsiveness */
+.me.genLayout {
+  max-width: 1000px;      /* limits content width for readability */
+  margin: 0 auto;          /* centers horizontally */
+  padding: 1rem 2rem;      /* some padding on sides */
+  text-align: center;      /* center-align text */
+}
        /* BOLD ABOUT ME LABEL*/
 .me > label {
     border: 3px  #381301 solid;
@@ -370,19 +377,11 @@ body {
 }
    
        /* SOME WRITEUPS ABOUT ME */
-.me > span > p {
-    border: brown 3px solid;
-    width: 180vh;
-    font-family: "Open Sans", sans-serif;
-    color:  #381301;
-    font-weight: 600;
-    font-size: 12px;
-    border-radius: 10px;
-    background: linear-gradient(145deg, #ffece1, #f5d6b4); /* warm organic tone */
-    box-shadow: 0 0 15px rgba(165, 42, 42, 0.4); /* soft brown glow */
-    padding: 12px 18px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
- 
+.me.genLayout > span > p {
+  line-height: 1.6;        /* improves readability */
+  font-size: 1rem;
+  color: #381301;          /* matches warm theme */
+  margin-bottom: 1.5rem;
 }
 
       /* EXPLORE */
@@ -391,20 +390,20 @@ body {
     transform: scale(1.3);
 }
 
-.me > span > a {
-    /* border: rgb(255, 0, 157) 2px solid; */
-     font-family: "Montserrat", sans-serif;
-    font-size: 12px;
-    color: #381301;
-    font-weight: 600;
-    text-decoration: none;
-    margin-left: -31.2rem;
-    border-radius: 10px;
-    background: linear-gradient(145deg, #ffece1, #f5d6b4); /* warm organic tone */
-    box-shadow: 0 0 15px rgba(165, 42, 42, 0.4); /* soft brown glow */
-    padding: 15px 20px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
+.me.genLayout > span > a {
+  display: inline-block;
+  text-decoration: none;
+  color: #ffece1;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  border-radius: 10px;
+  background-color: #381301;  /* warm button look */
+  transition: all 0.3s ease;
+}
     
+.me.genLayout span a:hover {
+  background-color: #4d1e0e;
+  box-shadow: 0 0 15px rgba(255, 236, 225, 0.6);
 }
 
 /* Container for Ability + Skills sections */
@@ -466,6 +465,7 @@ body {
    
 .skills > h3 {
   text-align: center;
+
 }
 
 .skills h3, .ability h3, .current h3 {
@@ -497,7 +497,7 @@ body {
 
 }
 
-.allSkills h3 {
+.allSkills > h3 {
   text-align: center;
   font-size: 1.8rem;
   color: #381301;
@@ -556,17 +556,10 @@ body {
     background-image: url(./image/plain\ background\ with\ eco\ design.jpeg)
 }       
 .myPortfolio {
-    border: 3px #381301 solid;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Montserrat", sans-serif;
-    font-size: 15px;
-    color: #381301;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 0.9rem 2rem;
-    width: 160px;    
+  text-align: center;
+  font-size: 1.8rem;
+  color: #381301;
+  margin-bottom: 1.5rem;   
 }  
 
 
@@ -627,20 +620,10 @@ body {
 
 
 .comingsoon {
-    border: solid 3px #381301;
-    font-family: "Montserrat", sans-serif;
-    font-size: 15px;
+    text-align: center;
+    font-size: 1.8rem;
     color: #381301;
-    font-weight: 800;
-    text-decoration: none;
-    width: 160px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 45px;
-    margin-bottom: 2rem;
-    /* padding: 0.9rem 2rem;   */
+    margin-bottom: 1.5rem;
 }
 
 .theyummy {
@@ -681,13 +664,81 @@ body {
     height: 150vh;
 }
 
-.contactme {
-    /* border: solid red 2px; */
+.contactme.genLayout {
+  text-align: center;           /* center heading and paragraph */
+  max-width: 800px;             /* match other sections */
+  margin: 0 auto;               /* center container */
+  padding: 0 1rem;              /* some side padding for mobile */
+}
+
+
+/* Contact Form */
+#contactForm .clientdetails {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;             /* form width */
+  margin: 0 auto;               /* center the form */
+  padding: 0 1rem;              /* responsive padding */
+  gap: 1rem;                    /* space between inputs */
+}
+
+
+/* Form inputs and textarea */
+#contactForm input,
+#contactForm textarea,
+#contactForm button {
+  width: 100%;
+  box-sizing: border-box;       /* ensure padding doesn't overflow */
+}
+
+/* Footer */
+/* Footer Container */
+footer.footer.genLayout {
+  background: linear-gradient(135deg, #381301, #4d1e0e);  /* diagonal brown gradient */
+  color: #ffece1;                                        /* warm text color */
+  text-align: center;
+  padding: 2rem 1rem;
+  font-family: "Open Sans", sans-serif;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);          /* subtle shadow above footer */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Back to Home link */
+footer.footer.genLayout > a {
+  color: #ffece1;
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+
+/* Copyright Section */
+footer.footer.genLayout .theend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+footer.footer.genLayout .theend > p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+footer.footer.genLayout a:hover {
+   text-decoration: underline;
+   color: #ffb366;                /* subtle warm glow effect */
+}
+/* .contactme {
+    border: solid red 2px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-}           
+    justify-content: center; */
+/* }            */
 .contactme > h3 {
      border: 3px  #381301 solid;
     font-family: "Montserrat", sans-serif;
@@ -724,8 +775,7 @@ body {
     font-weight: 600;
     padding: 1rem 2rem;
 }
-
-.clientdetails > textarea {
+ .clientdetails > textarea {
     border: 4px solid #381301;
     border-top: none;
     border-right: none;
@@ -733,11 +783,6 @@ body {
 
 }
 
-.clientdetails textarea {
-    resize: none;
-    width: 17%;
-    box-sizing: border-box;
-}
 .clientdetails > button {
    /* border: rgb(255, 47, 193) solid 2px; */
    border: none;
@@ -762,31 +807,32 @@ body {
     color: #381301;
     margin-top: 3rem;
 }
-.footer > a {
-    color: #ffece1;
-    background-color: #381301;
-    text-decoration: none;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 450;
-    font-size: 12px;
+/* Social Icons */
+footer.footer.genLayout .media {
+  margin: 1rem 0;
 }
 
-.media {
-    display: flex;
-    gap: 15px;
-    
-    /* margin-right: 5rem;  */
+footer.footer.genLayout .media > a {
+  display: inline-block;
+  margin: 0 0.5rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
+
+footer.footer.genLayout .media a:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 10px #ffb366);
+}
+
 
 .theend {
      display: flex;
      justify-content: space-evenly;
 }
 
-.theend > img {
-    width: 30px;
-    background-color: none;
-    text-decoration: none;
+footer.footer.genLayout .theend > img {
+  width: 24px;
+  height: auto;
+  margin-bottom: 0.5rem;
 }
 
 .theend > img > span {
@@ -943,5 +989,35 @@ body {
 
  .allSkills .currentContent h6 {
     font-size: 0.8rem;
+  }
+
+   #contactForm .clientdetails {
+    padding: 0 0.5rem;
+  }
+
+  footer.footer.genLayout {
+    padding: 1.5rem 0.5rem;
+  }
+
+  
+  footer.footer.genLayout .media a {
+    margin: 0 0.25rem;
+  }
+
+  footer.footer.genLayout .theend img {
+    width: 20px;
+  }
+
+   .me.genLayout {
+    padding: 1rem;
+  }
+  
+  .me.genLayout span p {
+    font-size: 0.95rem;
+  }
+  
+  .me.genLayout span a {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
   }
 }
