@@ -691,6 +691,28 @@ body {
   box-sizing: border-box;       /* ensure padding doesn't overflow */
 }
 
+#contactForm textarea {
+  width: 100%;               /* full width of container */
+  max-width: 600px;          /* optional limit */
+  height: 150px;             /* fixed height */
+  padding: 0.8rem 1rem;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: #381301;
+  background-color: #fff8f0;
+  border: 2px solid #381301;
+  border-radius: 10px;
+  resize: none;              /* disables resizing */
+  box-shadow: 0 0 8px rgba(56, 24, 1, 0.3);
+  transition: all 0.3s ease;
+}
+
+
+#contactForm textarea:focus {
+  outline: none;
+  border-color: #ffece1;
+  box-shadow: 0 0 12px rgba(255, 236, 225, 0.6);
+}
 /* Footer */
 /* Footer Container */
 footer.footer.genLayout {
@@ -780,7 +802,6 @@ footer.footer.genLayout a:hover {
     border-top: none;
     border-right: none;
     background: none;
-
 }
 
 .clientdetails > button {
@@ -1019,5 +1040,20 @@ footer.footer.genLayout .theend > img {
   .me.genLayout span a {
     padding: 0.4rem 1rem;
     font-size: 0.9rem;
+  }
+
+   #contactForm textarea {
+    width: 90%;       /* slightly smaller than container for padding */
+    max-width: 100%;  /* ensures it doesn't overflow */
+    margin: 0 auto;   /* center horizontally */
+    display: block;   /* ensures margin auto works */
+  }
+}
+
+
+@media (max-width: 480px) {
+  #contactForm textarea {
+    width: 95%;
+    font-size: 0.9rem;  /* slightly smaller text on small screens */
   }
 }
