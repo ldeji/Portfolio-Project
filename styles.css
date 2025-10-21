@@ -755,6 +755,80 @@ body {
   box-sizing: border-box;       /* ensure padding doesn't overflow */
 }
 
+ /* script Alert  */
+ #customAlert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+#customAlert.show {
+  display: flex;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.alertBox {
+  background: #fff;
+  color: #222;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+  width: 80%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  animation: popUp 0.3s ease-in-out;
+}
+
+.alertBox > p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+#closeAlert {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#closeAlert:hover {
+  background-color: #0056b3;
+}
+
+
+/* ✅ Animations */
+@keyframes popUp {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* Fixed, non-resizable textarea */
 #newsletterForm textarea,
 #contactForm textarea {
@@ -948,13 +1022,53 @@ footer.footer.genLayout .theend > img {
 
  /*Fade-in effect for the success/error message */
 #formMessage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 1.5rem 2.5rem;
+  border-radius: 15px;
+  text-align: center;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
   opacity: 0;
-  transition: opacity 0.8s ease-in-out; /* smooth fade */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease-in-out;
 }
 #formMessage.show {
   opacity: 1;
 }
 
+#messageBox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(34, 34, 34, 0.9);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#messageBox.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.05);
+}
 
 /*RESPONSIVE DESIGN */
 
@@ -1131,8 +1245,22 @@ footer.footer.genLayout .theend > img {
   .map-container > iframe {
     height: 280px;
   }
-}
-   #contactForm > textarea {
+
+   .alertBox {
+    padding: 1.5rem 2rem;
+    width: 90%;
+  }
+
+  .alertBox p {
+    font-size: 1rem;
+  }
+
+  #closeAlert {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  #contactForm > textarea {
     width: 90%;       /* slightly smaller than container for padding */
     max-width: 100%;  /* ensures it doesn't overflow */
     margin: 0 auto;   /* center horizontally */
@@ -1162,6 +1290,15 @@ footer.footer.genLayout .theend > img {
     font-size: 1.6rem;
     letter-spacing: 1.5px;
   }
+  
+    #formMessage {
+    width: 85%;
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+  }
+  }
+   
+
 
 
 @media (max-width: 480px) {
@@ -1192,4 +1329,16 @@ footer.footer.genLayout .theend > img {
   .map-container iframe {
     height: 250px;
   }
+
+  #messageBox {
+    width: 80%;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+   #formMessage {
+    width: 90%;
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+  }
 }
+

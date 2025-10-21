@@ -302,23 +302,54 @@
                 <a href="./Demo.html">| DEMO |</a> 
 
             </div><br><br><br><br><br><br>
-         </section>
-                        <!-- CONTACT CONTACT CONTACT -->
+     
+                     <!-- OFFICE LOCATION -->
+<section class="studio genLayout">
+      <h3><strong>STUDIO LOCATION</strong></h3>
+      <p>Suite 95, Dolphin Plaza, Corporation Drive, Dolphin Estate, Ikoyi, Lagos, Nigeria.</p>
 
-           <section>
-              <div class="contactme genLayout">
-                    <h3><strong>CONTACT</strong></h3>
-                </div><br><br>
-           </section> 
-    <form id="contactForm" action="https://formspree.io/f/xqaywnwl" method="POST">
-                <div class="clientdetails">
-                  <input type="text" name="name" autocomplete="name" placeholder="ENTER YOUR NAME*" required><br><br>
-                  <input type="email" name="email" autocomplete="email" placeholder="ENTER YOU EMAIL*" required><br><br>
-                  <input type="number" name="phone" autocomplete="tel" placeholder="PHONE NUMBER" required><br><br>
-                   <textarea placeholder="YOUR MESSAGE" autocomplete="off" name= "message" id="message" rows="6" cols="25" required></textarea><br><br>
-                  <button TYPE="submit"><span>SUBMIT</span></button>
-                </div><br><br><br><br>
-                
+  <!-- Google Map Embed -->
+  <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps?q=Suite%2095,%20Dolphin%20Plaza,%20Corporation%20Drive,%20Dolphin%20Estate,%20Ikoyi,%20Lagos,%20Nigeria&output=embed"
+          width="100%"
+          height="350"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+  </div>
+</section>
+
+
+                <section>
+          <div class="contactme genLayout">
+            <h3><strong>NEWSLETTER</strong></h3>
+            <p>Stay connected with me — get updates about my latest projects, artworks, and creative insights directly in your inbox.</p>
+          </div><br><br>
+        </section>
+
+    <form id="newsletterForm" action="https://formspree.io/f/xqaywnwl" method="POST">
+    <div class="newsletter-options">
+      <p>Would you like to receive my newsletter?</p>
+      <label>
+        <input type="radio" name="newsletter" value="Yes" required> Yes, sign me up!
+      </label>
+      <label>
+        <input type="radio" name="newsletter" value="No" required> No, maybe later.
+      </label>
+      <div id="formMessage"></div>
+    </div><br>
+
+     <div class="clientdetails">
+          <input type="text" name="name" autocomplete="name" placeholder="ENTER YOUR NAME*" required><br><br>
+          <input type="email" name="email" autocomplete="email" placeholder="ENTER YOUR EMAIL*" required><br><br>
+          <textarea placeholder="YOUR MESSAGE (optional)" autocomplete="off" name="message" id="message" rows="6" cols="25"></textarea><br><br>
+          <button type="submit"><span>SUBSCRIBE</span></button>
+    </div><br><br><br>
+    
+    
                 <footer class="footer genLayout">
                     <a href="./index.html">Back to Home</a><br><br>
 
@@ -358,10 +389,10 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (response.ok) {
-        messageBox.textContent = "✅ Message sent successfully!";
-        messageBox.classList.add("show");
-        messageBox.style.display = "block";
-        form.reset();
+         messageBox.textContent = "✅ Thank you! You'll hear from me soon.";
+         messageBox.classList.add("show");
+         messageBox.style.display = "flex";
+         form.reset();
 
         // Auto-hide after 5 seconds
         setTimeout(() => {
