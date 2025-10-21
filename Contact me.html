@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact me</title>
+    <title>News Letter</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -19,40 +19,76 @@
                 <img src="./image/my custom logo with plain eco background.jpeg" alt="mylogo">
               </div>
               <div class="links">
+                <a href="./index.html">Home</a>
                 <a href="./About me.html">About me</a>
                 <a href="./Skills.html">Skills</a>
                 <a href="./Portfolio.html">Portfolio</a>
                 <a href="./Demo.html">Demo</a>
-                <a href="./Contact me.html"><button class="btn">CONTACT ME</button></a>
               </div>
             </header><br><br><br><br><br> 
         
-        <section>
-            <form id="contactForm" action="https://formspree.io/f/xqaywnwl" method="POST">
-                <div class="clientdetails">
-                  <input type="text" name="name" autocomplete="name" placeholder="ENTER YOUR NAME*" required><br><br>
-                  <input type="email" name="email" autocomplete="email" placeholder="ENTER YOU EMAIL*" required><br><br>
-                  <input type="number" name="phone" autocomplete="tel" placeholder="PHONE NUMBER" required><br><br>
-                   <textarea placeholder="YOUR MESSAGE" autocomplete="off" name= "message" id="message" rows="6" cols="25" required></textarea><br><br>
-                  <button TYPE="submit"><span>SUBMIT</span></button>
-                </div><br><br><br><br>
-                
-                <footer class="footer genLayout">
-                    <a href="./index.html">Back to Home</a><br><br>
+          <!-- OFFICE LOCATION -->
+<section class="studio genLayout">
+      <h3><strong>STUDIO LOCATION</strong></h3>
+      <p>Suite 95, Dolphin Plaza, Corporation Drive, Dolphin Estate, Ikoyi, Lagos, Nigeria.</p>
 
-                    <div class="media">
-                       <a href="https://mail.google.com/mail/u/0/" target="_blank"><img src="./image/@logo.png" alt="icon"></a>
-                       <a href="https://github.com/ldeji?tab=repositories" target="_blank"><img src="./image/gitHub logo.png" alt="github"></a>
-                       <a href="https://www.linkedin.com/in/peleowo-lateef-632257b1/" target="_blank"><img src="./image/linkedin logo.png" alt="linkedin"></a>
-                    </div>
+  <!-- Google Map Embed -->
+  <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps?q=Suite%2095,%20Dolphin%20Plaza,%20Corporation%20Drive,%20Dolphin%20Estate,%20Ikoyi,%20Lagos,%20Nigeria&output=embed"
+          width="100%"
+          height="350"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+  </div>
+</section>
 
-                    <div class="theend">
-                        <img src="./image/copyright1.png" alt="copy"><span><p>2025 Peleowo Lateef All Rights Reserved</p></span>
-                    </div>
 
-                </footer><br><br><br><br>
-            </form>
+                <section>
+          <div class="contactme genLayout">
+            <h3><strong>NEWSLETTER</strong></h3>
+            <p>Stay connected with me — get updates about my latest projects, artworks, and creative insights directly in your inbox.</p>
+          </div><br><br>
         </section>
+
+        <section>
+  <form id="newsletterForm" action="https://formspree.io/f/xqaywnwl" method="POST">
+    <div class="newsletter-options">
+      <p>Would you like to receive my newsletter?</p>
+      <label>
+        <input type="radio" name="newsletter" value="Yes" required> Yes, sign me up!
+      </label>
+      <label>
+        <input type="radio" name="newsletter" value="No" required> No, maybe later.
+      </label>
+    </div><br>
+
+    <div class="clientdetails">
+          <input type="text" name="name" autocomplete="name" placeholder="ENTER YOUR NAME*" required><br><br>
+          <input type="email" name="email" autocomplete="email" placeholder="ENTER YOUR EMAIL*" required><br><br>
+          <textarea placeholder="YOUR MESSAGE (optional)" autocomplete="off" name="message" id="message" rows="6" cols="25"></textarea><br><br>
+          <button type="submit"><span>SUBSCRIBE</span></button>
+    </div><br><br><br>
+
+    <footer class="footer genLayout">
+          <a href="./index.html">Back to Home</a><br><br>
+
+          <div class="media">
+            <a href="https://mail.google.com/mail/u/0/" target="_blank"><img src="./image/@logo.png" alt="icon"></a>
+            <a href="https://github.com/ldeji?tab=repositories" target="_blank"><img src="./image/gitHub logo.png" alt="github"></a>
+            <a href="https://www.linkedin.com/in/peleowo-lateef-632257b1/" target="_blank"><img src="./image/linkedin logo.png" alt="linkedin"></a>
+          </div>
+
+          <div class="theend">
+            <img src="./image/copyright1.png" alt="copy">
+            <span><p>2025 Peleowo Lateef All Rights Reserved</p></span>
+          </div>
+        </footer><br><br><br><br>
+      </form>
+    </section>
 
     <p id="formMessage" style="display:none; color: green; font-weight: bold; margin-top: 10px;"></p>
 
