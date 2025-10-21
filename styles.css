@@ -563,20 +563,25 @@ body {
                  /* PICTURES PICTURES PICTURES IN FLEX WRAP*/
 .image-gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsive grid */
   gap: 20px;
+  justify-content: center; /* centers all cards */
 }
 
 .image-card {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
+  max-width: 350px; /* keeps image-card from being too wide */
+  margin: 0 auto; /* centers each card within its grid cell */
+  transition: transform 0.3s ease;
 }
 
-.image-card img {
+.image-card > img {
   width: 100%;
-  height: 250px; /* fixed height for all images */
-  object-fit: cover; /* crops evenly without distortion */
+  height: auto; /* let height adjust naturally */
+  max-height: 300px; /* keeps consistent look without cropping too much */
+  object-fit: contain; /* ensures full image is visible */
   border-radius: 12px;
   transition: transform 0.5s ease;
 }
@@ -584,35 +589,44 @@ body {
 /* Caption overlay */
 .caption {
   position: absolute;
-  bottom: -100%;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(56, 19, 1, 0.8);
-  color: #ffece1;
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: flex;
+  flex-direction: column; /* ✅ stack h3 above p */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   padding: 15px;
-  transition: bottom 0.4s ease;
+  font-size: 16px;
+  overflow-wrap: break-word;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 0;
+  transform: translateY(100%);
 }
 
 /* Hover effect */
 .image-card:hover img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .image-card:hover .caption {
-  bottom: 0; /* slides up halfway */
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.caption h3 {
-  margin: 0;
-  font-size: 18px;
-  font-weight: 700;
+.caption > h3 {
+  margin-bottom: 10px; /* space between h3 and p */
+  font-size: 20px;
+  font-weight: 600;
 }
 
-.caption p {
-  font-size: 14px;
-  margin-top: 8px;
+.caption > p {
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 
@@ -654,7 +668,39 @@ body {
     color: #381301
 
 }
-            /* CONTACT ME PAGE */
+            /* STUDIO ADDRESS & CONTACT ME PAGE  */
+            /* ===== STUDIO LOCATION SECTION ===== */
+.studio {
+  text-align: center;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+.studio h3 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  color: #2b2b2b;
+}
+
+.studio p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  padding: 0 15px;
+}
+
+.map-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+            
 .thecontactme {
     background-image: url(./image/plain\ background\ with\ eco\ design.jpeg);
     padding: 2rem;
@@ -668,6 +714,27 @@ body {
   padding: 0 1rem;              /* some side padding for mobile */
 }
 
+.newsletter-options {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.newsletter-options p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.newsletter-options label {
+  margin: 0 15px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.newsletter-options input[type="radio"] {
+  margin-right: 6px;
+  accent-color: #381301; /* matches your theme color */
+}
 
 /* Contact Form */
 #contactForm .clientdetails {
@@ -688,6 +755,15 @@ body {
   box-sizing: border-box;       /* ensure padding doesn't overflow */
 }
 
+/* Fixed, non-resizable textarea */
+#newsletterForm textarea,
+#contactForm textarea {
+  resize: none;       /* prevent user resizing */
+  height: 150px;      /* fixed height */
+  max-height: 150px;
+  min-height: 150px;
+  overflow-y: auto;   /* allow internal scroll if content overflows */
+}
 #contactForm textarea {
   width: 100%;               /* full width of container */
   max-width: 600px;          /* optional limit */
@@ -751,28 +827,29 @@ footer.footer.genLayout a:hover {
    text-decoration: underline;
    color: #ffb366;                /* subtle warm glow effect */
 }
-/* .contactme {
-    border: solid red 2px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
-/* }            */
+.contactme {
+    text-align: center;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+            
 .contactme > h3 {
-     border: 3px  #381301 solid;
-    font-family: "Montserrat", sans-serif;
-    font-size: 15px;
-    color: #381301;
-    font-weight: 600;
-    text-decoration: none;
-    padding: 0.9rem 2rem;
-    margin-right: 1rem;
-    margin-bottom: 2rem;
+   font-size: 2rem;          /* large and bold for desktop */
+   margin-bottom: 20px;
+   color: #2b2b2b;           /* adjust for theme (or white if dark background) */
+   text-transform: uppercase;
 }
+
 .contactme > p {
-    /* border: yellow solid 2px; */
-    width: 140vh;
+  font-size: 1.1rem;        /* comfortable for desktop */
+  line-height: 1.6;         /* improve readability */
+  max-width: 800px;         /* keep paragraph from stretching too wide */
+  margin: 0 auto;           /* center horizontally */
+  text-align: center;       /* balanced look */
+  color: #333;              /* adjust as needed for your theme */
+  padding: 0 20px;          /* side spacing for small screens */
 }
+
 
 .clientdetails {
     /* border: 2px solid greenyellow; */
@@ -933,19 +1010,22 @@ footer.footer.genLayout .theend > img {
     font-size: 0.9rem;
   }
 
-   .rightRoom img {
+   .rightRoom > img {
     max-width: 260px;
   }
-  .bannerWriteup span p {
+  .bannerWriteup > span > p {
     font-size: 13px;
   }
 
-  .image-card img {
-    height: 200px;
-  }
-
   .caption {
-    height: 90%;
+
+    width: 100%;              /* Match image width */
+    max-width: 100%;          /* Prevent it from exceeding the card */
+    box-sizing: border-box;   /* Ensure padding doesn’t affect width */
+    text-align: center;
+    background-color:  rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 0 0 12px 12px;
   }
 
    .icons {
@@ -953,17 +1033,20 @@ footer.footer.genLayout .theend > img {
     gap: 1rem;
   }
 
-  .icons img {
+  .icons > img {
     width: 32px;
     height: 32px;
     padding: 5px;
   }
 
-    .image-gallery {
-    grid-template-columns: 1fr; /* one per row */
-    padding: 20px;
+  .image-gallery {
+    grid-template-columns: 1fr;
   }
 
+  
+  .image-card {
+    max-width: 100%;
+  }
   .image-card img {
     height: 200px;
   }
@@ -975,9 +1058,7 @@ footer.footer.genLayout .theend > img {
   .caption p {
     font-size: 13px;
   }
-}
-
-
+  }
 
 @media (max-width: 768px) {
   .header {
@@ -1030,27 +1111,85 @@ footer.footer.genLayout .theend > img {
     padding: 1rem;
   }
   
-  .me.genLayout span p {
+  .me.genLayout > span > p {
     font-size: 0.95rem;
   }
   
-  .me.genLayout span a {
+  .me.genLayout > span > a {
     padding: 0.4rem 1rem;
     font-size: 0.9rem;
   }
 
-   #contactForm textarea {
+  .studio > h3 {
+    font-size: 1.6rem;
+  }
+
+  .studio > p {
+    font-size: 1rem;
+  }
+
+  .map-container > iframe {
+    height: 280px;
+  }
+}
+   #contactForm > textarea {
     width: 90%;       /* slightly smaller than container for padding */
     max-width: 100%;  /* ensures it doesn't overflow */
     margin: 0 auto;   /* center horizontally */
     display: block;   /* ensures margin auto works */
   }
+
+   .image-gallery {
+    grid-template-columns: 1fr; /* stack images vertically */
+    gap: 15px;
 }
+
+ .newsletter-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .newsletter-options label {
+    margin-bottom: 10px;
+  }
+
+  .contactme > p {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0 15px;
+  }
+ .contactme h3 {
+    font-size: 1.6rem;
+    letter-spacing: 1.5px;
+  }
 
 
 @media (max-width: 480px) {
   #contactForm textarea {
     width: 95%;
     font-size: 0.9rem;  /* slightly smaller text on small screens */
+  }
+  
+   .contactme > h3 {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+
+  .contactme > p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    padding: 0 10px;
+  }
+
+   .studio h3 {
+    font-size: 1.3rem;
+  }
+
+  .studio p {
+    font-size: 0.95rem;
+  }
+
+  .map-container iframe {
+    height: 250px;
   }
 }
