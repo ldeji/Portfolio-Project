@@ -47,7 +47,7 @@ body {
 }
 
 .header .links .btn {
-  background: #ff66005d;
+  background: #841f03c6;
   color: #fff;
   border: none;
   padding: 8px 16px;
@@ -57,7 +57,7 @@ body {
 }
 
 .header .links .btn:hover {
-background: #e65c00;
+background: #fc4e27f9;
 }
 
 .hamburger {
