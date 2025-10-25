@@ -1513,3 +1513,17 @@ footer.footer.genLayout .theend > img {
   }
 }
 }
+
+/* Hide hamburger on larger screens */
+@media (min-width: 769px) {
+  .hamburger {
+    display: none !important;
+  }
+}
+
+/* Show hamburger on mobile and tablet */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex !important;
+  }
+}
