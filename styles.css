@@ -26,28 +26,28 @@ body {
   padding: 10px 40px;
   background-color: #fff;
   position: relative;
-  z-index: 1000;                /* always on top */
+  z-index: 1000;          /* always on top */
 }
 
-.header .links {
+.header > .links {
   display: flex;
   gap: 25px;
   align-items: center;
 }
 
-.header .links > a {
+.header > .links > a {
    text-decoration: none;
   color: #333;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
-.header .links a:hover {
- color: #b66a2b;
+.header > .links > a:hover {
+ color: #8b460e;
 }
 
 .header .links .btn {
-  background: #ff6600;
+  background: #ff66005d;
   color: #fff;
   border: none;
   padding: 8px 16px;
@@ -61,38 +61,49 @@ background: #e65c00;
 }
 
 .hamburger {
-  display: none;
+ display: none; /* hidden by default */
   flex-direction: column;
   justify-content: space-between;
   width: 25px;
   height: 18px;
   cursor: pointer;
-  z-index: 20;
+  z-index: 2000;
 }
 
-.hamburger > span {
+.hamburger.active {
+  position: relative;
+  z-index: 1100; /* stays on top of everything */
+}
+
+.hamburger span {
   display: block;
   height: 3px;
   width: 100%;
-  background: #333;
-  border-radius: 3px;
-  transition: all 0.3s ease;
+  background: #000;
+  border-radius: 2px;
+ transition: transform 0.4s ease, opacity 0.35s ease;
+}
+
+/* Keep X visible on toggle */
+.hamburger.active span {
+  background-color: #000 !important;
 }
 
   /* When active (turn into X) */
 /* Hamburger active (turn into X) */
 .hamburger.active span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: rotate(45deg) translate(4px, 5px);
 }
 
 .hamburger.active span:nth-child(2) {
   opacity: 0;
+    opacity: 0; /* fade out middle line */
+    transition: opacity 0.5s ease;
 }
 
 .hamburger.active span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+   transform: rotate(-45deg) translate(5px, -6px);
 }
-
 /* --------NAV BAR------ */ */
 .apartment {
     /* border: blue 3px solid; */
@@ -105,18 +116,37 @@ background: #e65c00;
 .logo > img  {
     /* border: solid 2px #381301; */
  width: 100px;
+ border-radius: 10px;
 }
 
-.links > a:hover::after {
+.links {
+  display: flex;
+  gap: 1rem;
+}
+
+.links > a {
+  position: relative; /* Make this the positioning parent */
+  text-decoration: none;
+  color: #333;
+  padding: 5px 10px;
+  display: inline-block;
+}
+
+/* Glow underline animation */
+.links > a::after {
   content: "";
   position: absolute;
-  bottom: -4px;
   left: 0;
-  width: 100%;
+  bottom: -4px; /* Slightly below the text */
+  width: 0;
   height: 3px;
   background-color: rgba(204, 56, 56, 0.9);
   border-radius: 5px;
-  animation: glowLine 0.4s ease forwards;
+  transition: width 0.4s ease;
+}
+
+.links > a:hover::after {
+  width: 100%;
 }
 
 @keyframes glowLine {
@@ -261,10 +291,6 @@ background: #e65c00;
   text-shadow: 0 0 8px rgba(204, 56, 56, 0.7);
 }
 
-
-
-
-
  .theyummy >  a:hover {
     background-color: #381301;
     color:#ffece1;
@@ -274,7 +300,6 @@ background: #e65c00;
     background-color: #381301;
     color:#ffece1;
 }
-
 
 
       /* my social media handles */
@@ -1101,6 +1126,14 @@ footer.footer.genLayout .theend > img {
   transform: translate(-50%, -50%) scale(1.05);
 }
 
+.hamburger.active span:nth-child(1),
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+  background: #000 !important;
+  position: relative !important;
+  z-index: 2000 !important;
+}
+
 /*RESPONSIVE DESIGN */   /*RESPONSIVE DESIGN */  /*RESPONSIVE DESIGN */
 
 
@@ -1223,15 +1256,15 @@ footer.footer.genLayout .theend > img {
   }
 
    .links {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: #fff;
-    width: 100%;
     display: none;
     flex-direction: column;
-    text-align: center;
-    padding: 10px 0;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
 
    .links.show {
