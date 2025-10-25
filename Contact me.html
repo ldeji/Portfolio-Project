@@ -20,6 +20,7 @@
               </div>
               <div class="links">
                 <a href="./index.html">Home</a>
+                <a href="./index.html">Home</a>
                 <a href="./About me.html">About me</a>
                 <a href="./Skills.html">Skills</a>
                 <a href="./Portfolio.html">Portfolio</a>
@@ -139,6 +140,23 @@ document.addEventListener("DOMContentLoaded", () => {
   closeBtn.addEventListener("click", () => {
     alertBox.classList.remove("show");
   });
+
+      const links = document.querySelector('.links');
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 20){
+      links.style.transform = 'translateY(0)';
+    } else {
+      links.style.transform = 'translateY(0)'; // keep same position
+    }
+  });
+
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("show");
+});
 });
 </script>
  </body>

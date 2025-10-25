@@ -16,7 +16,17 @@
               <div class="logo">
                 <img src="./image/my custom logo with plain eco background.jpeg" alt="mylogo">
               </div>
-              <div class="links">
+
+
+            <!-- Hamburger button -->
+                        
+              <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <div class="links" id="navLinks">
                 <a href="./About me.html">About me</a>
                 <a href="./Skills.html">Skills</a>
                 <a href="./Portfolio.html">Portfolio</a>
@@ -417,6 +427,14 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       links.style.transform = 'translateY(0)'; // keep same position
     }
+  });
+
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("navLinks");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("show");
   });
 </script>                  
 </body>
