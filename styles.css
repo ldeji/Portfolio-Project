@@ -1233,11 +1233,12 @@ footer.footer.genLayout .theend > img {
   }
 
   .caption h3 {
-    font-size: 10px;
+    font-size: 9px;
+    margin-bottom: 4px;
   }
 
   .caption p {
-    font-size: 7px;
+    font-size: 6px;
   }
   }
        
