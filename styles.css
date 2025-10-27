@@ -1241,12 +1241,10 @@ footer.footer.genLayout .theend > img {
     font-size: 6px;
   }
   }
-  
-  .caption > a {
-      color: rgba(255, 166, 0, 0.337);
-    
-  }
-  
+   .caption > a {
+    color: #fff;
+    font-size: 15px;
+   }    
 
                   /* SMALL SCREEN  */   /* SMALL SCREEN  */
 @media (max-width: 768px) {
