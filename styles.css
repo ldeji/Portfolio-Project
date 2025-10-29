@@ -633,6 +633,23 @@ background: #fc4e27f9;
   border-radius: 12px;
   margin: auto;
 }
+.image-card a {
+  display: inline-block;
+  background: #00ff99;
+  color: #000;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem; /* moderate readable size */
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+.image-card a:hover {
+  background: #00cc7a;
+  color: #fff;
+  transform: scale(1.05);
+}
 
 .image-card > img {
    width: 100%;
@@ -1176,6 +1193,8 @@ footer.footer.genLayout .theend > img {
     align-items: flex-start;
   }
 
+    
+
   .links {
     flex-wrap: wrap;
     gap: 10px;
@@ -1529,5 +1548,19 @@ footer.footer.genLayout .theend > img {
 @media (max-width: 768px) {
   .hamburger {
     display: flex !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-card a {
+    font-size: 0.9rem; /* slightly smaller but still readable */
+    padding: 8px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-card a {
+    font-size: 0.85rem;
+    padding: 7px 12px;
   }
 }
