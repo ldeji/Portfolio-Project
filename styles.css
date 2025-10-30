@@ -1279,6 +1279,14 @@ footer.footer.genLayout .theend > img {
 
                   /* SMALL SCREEN  */   /* SMALL SCREEN  */
 @media (max-width: 768px) {
+ 
+
+
+
+   .links.show {
+    display: flex;
+  }
+  
   .ability, .current {
     grid-template-columns: 1fr; /* stack vertically */
     gap: 1.5rem;
