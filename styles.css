@@ -1279,11 +1279,7 @@ footer.footer.genLayout .theend > img {
 
                   /* SMALL SCREEN  */   /* SMALL SCREEN  */
 @media (max-width: 768px) {
- 
-
-
-
-   .links.show {
+    .links.show {
     display: flex;
   }
   
