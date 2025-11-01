@@ -257,14 +257,19 @@ background: #fc4e27f9;
 /* ------ BANNER WRITE-UP---- */
 .bannerWriteup {
   text-align: center;
-  margin-top: 3rem;
-  padding: 2rem;
+  max-width: 1000px;
+  margin: 6rem auto;              /* Increased overall margin for breathing space */
+  padding: 1rem 1rem;
+  background-color: #ffece1;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  margin-bottom: 20rem;            /* Adds generous gap before the next section */
 }
 
 .bannerWriteup > h2 {
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
-  color: #ffece1;
+  color: #ffece1c5;
   background-color: #381301;
   padding: 10px 20px;
   display: inline-block;
@@ -274,11 +279,10 @@ background: #fc4e27f9;
 
 
 .bannerWriteup > span > p {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.6;
   color: #381301;
   margin: 2rem 0;
- 
 }
 
 .bannerWriteup > a {
@@ -371,7 +375,7 @@ background: #fc4e27f9;
   border-radius: 10px;
   background-color: #ffece1;
   padding: 6px;
-  box-shadow: 0 0 10px rgba(56, 19, 1, 0.4);
+  box-shadow: 0 0 10px rgba(181, 174, 170, 0.4);
   transition: all 0.35s ease;
 }
  
@@ -408,7 +412,7 @@ background: #fc4e27f9;
       /* BOLD ABOUT ME AND EXPLORE BORDER */
 .me {
    text-align: center;
-   margin-bottom: 3rem;
+   margin-bottom: 1rem;
    padding: 2rem;
 }
 
@@ -462,7 +466,16 @@ background: #fc4e27f9;
 }
 
 /* Container for Ability + Skills sections */
-.ability, .current {
+.ability { 
+  margin-top: -5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+                   /* Keep sides consistent */
+                /* Extra space above the ability section */
+           /* Optional: space below for consistency */
+}
+.current {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
@@ -937,36 +950,74 @@ background: #fc4e27f9;
   box-shadow: 0 0 12px rgba(255, 236, 225, 0.6);
 }
 /* Footer */
-/* Footer Container */
+.footer.genLayout,
 footer.footer.genLayout {
-  background: linear-gradient(135deg, #381301, #4d1e0e);
-  width: 100%;                                                           /* diagonal brown gradient */
-  color: #ffece1;                                        /* warm text color */
-  text-align: center;
-  padding: 2rem 1rem;
-  font-family: "Open Sans", sans-serif;
-  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);          /* subtle shadow above footer */
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  width: 100vw;            /* full viewport width */
+  max-width: 100vw;        /* cancel any max-width */
+  margin-left: calc(-1 * ( (100% - 100vw) / 2 )); /* neutralize parent centering */
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+  left: 0;
+  right: 0;
+}
+
+.footer.genLayout,
+footer.footer.genLayout {
+  width: 100vw;            /* full viewport width */
+  max-width: 100vw;        /* cancel any max-width */
+  margin-left: calc(-1 * ( (100% - 100vw) / 2 )); /* neutralize parent centering */
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+  left: 0;
+  right: 0;
 }
 
 /* Back to Home link */
-footer.footer.genLayout > a {
-  color: #ffece1;
+.footer a {
   text-decoration: none;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  display: inline-block;
-  transition: all 0.3s ease;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-
 /* Copyright Section */
-footer.footer.genLayout .theend {
+.footer .media {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  margin: 15px 0 25px;
+  background-color: white;
+}
+
+.footer .media img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  color: white;
+}
+
+.footer .media img:hover {
+  transform: scale(1.15);
+  filter: brightness(1.2);
+}
+
+/* Copyright section */
+.footer .theend {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  margin-top: 1rem;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.footer .theend img {
+  width: 18px;
+  height: 18px;
+  opacity: 0.8;
 }
 
 footer.footer.genLayout .theend > p {
@@ -974,9 +1025,8 @@ footer.footer.genLayout .theend > p {
   font-size: 0.9rem;
 }
 
-footer.footer.genLayout a:hover {
-   text-decoration: underline;
-   color: #ffb366;                /* subtle warm glow effect */
+.footer a:hover {
+  color: #e84c1e;
 }
 .contactme {
     text-align: center;
@@ -1052,10 +1102,12 @@ footer.footer.genLayout a:hover {
     font-size: 13px;
     color: #381301;
     margin-top: 3rem;
+    background-color: #381301;
 }
 /* Social Icons */
 footer.footer.genLayout .media {
   margin: 1rem 0;
+  color: white;
 }
 
 footer.footer.genLayout .media > a {
@@ -1079,6 +1131,7 @@ footer.footer.genLayout .theend > img {
   width: 24px;
   height: auto;
   margin-bottom: 0.5rem;
+  color: white;
 }
 
 .theend > img > span {
@@ -1181,9 +1234,20 @@ footer.footer.genLayout .theend > img {
   .image-gallery {
     grid-template-columns: 1fr;
   }
+}
+
+@media (max-width: 768px) {
+  .bannerWriteup {
+    margin: 2rem 1rem;
+    padding: 2rem 1rem;
+  }
 
   .bannerWriteup h2 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+  }
+
+  .bannerWriteup > span > p {
+    font-size: 16px;
   }
 }
 
@@ -1304,19 +1368,6 @@ footer.footer.genLayout .theend > img {
 
    #contactForm .clientdetails {
     padding: 0 0.5rem;
-  }
-
-  footer.footer.genLayout {
-    padding: 1.5rem 0.5rem;
-  }
-
-  
-  footer.footer.genLayout .media a {
-    margin: 0 0.25rem;
-  }
-
-  footer.footer.genLayout .theend img {
-    width: 20px;
   }
 
    .me.genLayout {
@@ -1552,9 +1603,8 @@ footer.footer.genLayout .theend > img {
   }
 }
 
-/* ------------------------------
-   ✅ NAV RESPONSIVE FIX
------------------------------- */
+
+  /* NAV RESPONSIVE FIX */
 
 /* Default (desktop) — show links, hide hamburger */
 @media (min-width: 769px) {
@@ -1572,9 +1622,7 @@ footer.footer.genLayout .theend > img {
   }
 }
 
-/* ------------------------------
-   ✅ NAVBAR RESPONSIVE BEHAVIOR
------------------------------- */
+/* NAVBAR RESPONSIVE BEHAVIOR */
 
 /* Desktop (min-width: 769px) */
 @media (min-width: 769px) {
@@ -1663,3 +1711,20 @@ footer.footer.genLayout .theend > img {
   }
 }
 
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+  .footer {
+    padding: 30px 0; /* keep full-width even on mobile */
+  }
+
+  .footer .media img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .footer .theend {
+    flex-direction: column;
+    font-size: 0.85rem;
+  }
+}
