@@ -20,6 +20,7 @@ body {
 }
 
 .header {
+  /* border: solid 2px #381301; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,6 +31,7 @@ body {
 }
 
 .header > .links {
+  /* border: solid 2px #381301; */
   display: flex;
   gap: 25px;
   align-items: center;
@@ -118,12 +120,14 @@ background: #fc4e27f9;
 
 .logo > img  {
     /* border: solid 2px #381301; */
+    margin-left: 130px;
  width: 100px;
  border-radius: 10px;
 }
 
 .links {
   display: flex;
+  margin-right: 140px;
   gap: 1.5rem;
   align-items: center;
 }
@@ -1257,7 +1261,9 @@ footer.footer.genLayout .theend > img {
     align-items: flex-start;
   }
 
-    
+  .logo {
+    margin-left: -7rem;
+  }
 
   .links {
     display: none;
