@@ -686,7 +686,7 @@ background: #fc4e27f9;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.872);
+  background: #ffece1;
   color: black;
   display: flex;
   flex-direction: column; /* title on top, text below */
@@ -696,8 +696,8 @@ background: #fc4e27f9;
   padding: 1rem;
   border-radius: 12px;
   opacity: 1;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  transform: translateY(100%);
+  transition: opacity 0.4s ease, transform 2s ease;
+  transform: translateX(100%);
 }
 
 /* Hover effect */
@@ -707,7 +707,7 @@ background: #fc4e27f9;
 
 .image-card:hover .caption {
   opacity: 10;
-  transform: translateY(0);
+  transform: translateX(0);
 }
 
 .caption > h3 {
