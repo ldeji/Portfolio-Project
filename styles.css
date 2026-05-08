@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -48,19 +48,6 @@ body {
  color: #8b460e;
 }
 
-.header .links .btn {
-  background: #841f03c6;
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.header .links .btn:hover {
-background: #fc4e27f9;
-}
 
 .hamburger {
   flex-direction: column;
@@ -176,18 +163,18 @@ background: #fc4e27f9;
 /* LEFT SIDE (Text Area) */
 .leftRoom {
   flex: 1;
-  color: #381301;
+  color:#ffece1;
+  font-family: "Amaranth", sans-serif;
 }
 
 .leftRoom > h1 {
-  font-family: "Montserrat", sans-serif;
   font-size: 2.8rem;
   margin: 0.5rem 0; 
 }
 
-.leftRoom > h5 {
-  font-weight: 600;
-  color: #c03838;
+.leftRoom > .mydetails >h5 {
+  font-weight: 300;
+  font-size: small;
 }
 
 .rightRoom {
@@ -207,7 +194,7 @@ background: #fc4e27f9;
 }
 
 .signature-line p {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Amaranth", sans-serif;
   font-size: 14px;
   letter-spacing: 1px;
   color: #381301;
