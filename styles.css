@@ -6,7 +6,7 @@
 }
 /* ------OVERALL LAYOUT */
 body {
-     padding-top: 80px;;
+    background-color: #FEF2DE;
 }
 /* ---------ALL SECTIONS CENTERING-------- */
 .genLayout {
@@ -15,17 +15,13 @@ body {
     width: 90%;
 }
 
-.house {
-    height: 100vh; 
-}
-
 .header {
   /* border: solid 2px #381301; */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 40px;
-  background-color: #fff;
+  background-color: #FEF2DE;
+  box-shadow: 0 0 30px rgba(44, 211, 172, 0.927);
   position: relative;
   z-index: 1000;          /* always on top */
 }
@@ -38,8 +34,9 @@ body {
 }
 
 .header > .links > a {
-   text-decoration: none;
-  color: #333;
+  text-decoration: none;
+  color: #086252;
+  font-size: large;
   font-weight: 500;
   transition: color 0.3s ease;
 }
@@ -155,7 +152,7 @@ body {
   align-items: center;
   gap: 2rem;
   margin-top: 3rem;
-  background-color: #381301; /* solid brown */
+  background-color: #086252; 
   border-radius: 15px;
   padding: 2rem;
 }
@@ -253,7 +250,7 @@ body {
   padding: 1rem 1rem;
   background-color: #ffece1;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 16px rgba(163, 245, 162, 0.744);
   margin-bottom: 20rem;            /* Adds generous gap before the next section */
 }
 
@@ -261,7 +258,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 1.6rem;
   color: #ffece1c5;
-  background-color: #381301;
+  background-color: #086252;
   padding: 10px 20px;
   display: inline-block;
   border-radius: 10px;
