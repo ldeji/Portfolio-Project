@@ -21,7 +21,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #FEF2DE;
-  box-shadow: 0 0 30px rgba(44, 211, 172, 0.927);
+  box-shadow: 0 0 10px rgba(44, 211, 172, 0.927);
   position: relative;
   z-index: 1000;          /* always on top */
 }
@@ -274,7 +274,7 @@ body {
 }
 
 .bannerWriteup > a {
-  color: #c03838;
+  color: #33705a;
   text-decoration: none;
   font-weight: 600;
   border-bottom: 2px solid transparent;
@@ -283,8 +283,8 @@ body {
 }
 
 .bannerWriteup > a:hover {
-  border-bottom: 2px solid #c03838;
-  text-shadow: 0 0 8px rgba(204, 56, 56, 0.7);
+  border-bottom: 2px solid #33705a;
+  text-shadow: 0 0 8px rgba(51, 112, 90, 0.7);
 }
 
  .theyummy >  a:hover {
@@ -363,7 +363,7 @@ body {
   border-radius: 10px;
   background-color: #ffece1;
   padding: 6px;
-  box-shadow: 0 0 10px rgba(181, 174, 170, 0.4);
+  box-shadow: 0 0 10px #95f6d2;
   transition: all 0.35s ease;
 }
  
@@ -383,8 +383,6 @@ body {
   animation: pulseGlow 1.5s infinite alternate;
   background-color: #fff2e8;
 }
-
-
 
         /* ABOUT ME PAGE */
         /* THE BACKGROUND */
@@ -491,9 +489,8 @@ body {
   margin-bottom: 1rem;
 }
 
-
 .do > h3, .currentContent h6 {
-  color: #381301;
+  color: #33705a;
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -501,7 +498,7 @@ body {
 .do p {
   font-size: 0.95rem;
   line-height: 1.5;
-  color: #381301;
+  color: #33705a;
 }
 
        /* SKILLS PAGE */   /* SKILLS PAGE */
@@ -510,7 +507,8 @@ body {
     padding: 2rem;
 
 } 
- 
+
+
        /* SKILL BOLD LABEL HEADING  */
 .skills {
   text-align: center;
@@ -524,7 +522,7 @@ body {
 .skills h3, .ability h3, .current h3 {
   text-align: center;
   font-size: 2rem;
-  color: #381301;
+  color: #33705a;
   margin-bottom: 2rem;
 } 
  
@@ -553,7 +551,7 @@ body {
 .allSkills > h3 {
   text-align: center;
   font-size: 1.8rem;
-  color: #381301;
+  color: #33705a;
   margin-bottom: 1.5rem;
 }
 
@@ -581,7 +579,7 @@ body {
  }   
      /* BRAND NAMES */
  .allSkills .currentContent > h6 {
-    color: #381301;
+    color: #33705a;
     font-size: 0.9rem;
     font-weight: 600;
     margin: 0;
@@ -611,7 +609,7 @@ body {
 .myPortfolio {
   text-align: center;
   font-size: 1.8rem;
-  color: #381301;
+  color: #33705a;
   margin-bottom: 1.5rem;   
 }  
 
@@ -620,7 +618,10 @@ body {
 .image-gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+
+  column-gap: 40px; /* X-axis gap */
+  row-gap: 40px;    /* Y-axis gap */
+
   justify-content: center;
   align-items: center;
 }
@@ -636,7 +637,7 @@ body {
 }
 .image-card a {
   display: inline-block;
-  background: rgba(204, 56, 56, 0.9);
+  background: #086252;
   color: #000;
   text-decoration: none;
   padding: 10px 18px;
@@ -647,7 +648,7 @@ body {
   transition: all 0.3s ease;
 }
 .image-card a:hover {
-  background: rgba(82, 24, 24, 0.9);
+  background: #377f72;
   color: #fff;
   transform: scale(1.05);
 }
@@ -709,7 +710,7 @@ body {
 .comingsoon {
     text-align: center;
     font-size: 1.8rem;
-    color: #381301;
+    color: #33705a;
     margin-bottom: 1.5rem;
 }
 
@@ -719,31 +720,29 @@ body {
     align-items: center;
     justify-content: center;
 }
-.theyummy > img {
-    width: 200px;
-    border-radius: 100px
-}
 
+.theyummy > label:first-child {
+     font-size: 200px;
+}
 .theyummy > label:nth-child(2) {
-    /* border: blue 3px solid; */
-    font-size: 45px;
-    font-family: "Chewy", system-ui;
-    color: rgb(9, 106, 130);
+     font-family: "Chewy", cursive;
+     font-size: 55px;
+    color: #33705a;
 }
-
-.theyummy > label:last-child {
-    /* border: red 3px solid; */
-    color: #381301;
-    font-family: "Montserrat", sans-serif;
-     font-weight: 600;
-     font-size: 12px;
+.theyummy > label {
+     font-size: 20px;
+    color: #33705a;
 }
-
 .theyummy > a {
     font-family: "Montserrat", sans-serif;
-    color: #381301
-
+    color: #33705a;
+     font-weight: 600;
+    font-size: 25px;
 }
+.theyummy > a:hover {   
+   background-color: #33705a;
+    color: #ffece1;  
+  }
             /* STUDIO ADDRESS & CONTACT ME PAGE  */
             /* ===== STUDIO LOCATION SECTION ===== */
 .studio {
@@ -756,13 +755,13 @@ body {
   font-size: 2rem;
   letter-spacing: 2px;
   margin-bottom: 15px;
-  color: #2b2b2b;
+  color: #086252;
 }
 
 .studio p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #444;
+  color: #086252;
   max-width: 800px;
   margin: 0 auto 30px;
   padding: 0 15px;
@@ -774,7 +773,7 @@ body {
   margin: 0 auto;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(81, 237, 175, 0.881);
 }
             
 .thecontactme {
@@ -799,17 +798,19 @@ body {
   font-size: 1.1rem;
   margin-bottom: 10px;
   font-weight: 500;
+  color: #086252;
 }
 
 .newsletter-options label {
   margin: 0 15px;
   font-size: 1rem;
   cursor: pointer;
+  color: #086252;
 }
 
 .newsletter-options input[type="radio"] {
   margin-right: 6px;
-  accent-color: #381301; /* matches your theme color */
+  accent-color: #086252; /* matches your theme color */
 }
 
 /* Contact Form */
@@ -820,6 +821,16 @@ body {
   margin: 0 auto;               /* center the form */
   padding: 0 1rem;              /* responsive padding */
   gap: 1rem;                    /* space between inputs */
+}
+
+.clientdetails > button {
+  color: #086252;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 
@@ -923,19 +934,13 @@ body {
   font-size: 1rem;
   color: #381301;
   background-color: #fff8f0;
-  border: 2px solid #381301;
+  border: 2px solid #086252;
   border-radius: 10px;
   resize: none;              /* disables resizing */
   box-shadow: 0 0 8px rgba(56, 24, 1, 0.3);
   transition: all 0.3s ease;
 }
 
-
-#contactForm textarea:focus {
-  outline: none;
-  border-color: #ffece1;
-  box-shadow: 0 0 12px rgba(255, 236, 225, 0.6);
-}
 /* Footer */
 .footer.genLayout,
 footer.footer.genLayout {
@@ -955,17 +960,22 @@ footer.footer.genLayout {
   max-width: 100vw;        /* cancel any max-width */
   margin-left: calc(-1 * ( (100% - 100vw) / 2 )); /* neutralize parent centering */
   padding-left: 0;
+  padding-top: 30px;
   padding-right: 0;
+  height: 40vh;
   box-sizing: border-box;
   left: 0;
   right: 0;
+  background-color: #086252;
 }
 
 /* Back to Home link */
 .footer a {
   text-decoration: none;
   color: white;
+  background-color: #086252;
   font-weight: 500;
+  font-size: large;
   transition: color 0.3s ease;
 }
 
@@ -975,7 +985,7 @@ footer.footer.genLayout {
   justify-content: center;
   gap: 20px;
   margin: 15px 0 25px;
-  background-color: white;
+  background-color: #086252;
 }
 
 .footer .media img {
@@ -1012,9 +1022,6 @@ footer.footer.genLayout .theend > p {
   font-size: 0.9rem;
 }
 
-.footer a:hover {
-  color: #e84c1e;
-}
 .contactme {
     text-align: center;
     margin: 0 auto;
@@ -1024,7 +1031,7 @@ footer.footer.genLayout .theend > p {
 .contactme > h3 {
    font-size: 2rem;          /* large and bold for desktop */
    margin-bottom: 20px;
-   color: #2b2b2b;           /* adjust for theme (or white if dark background) */
+   color: #086252;           /* adjust for theme (or white if dark background) */
    text-transform: uppercase;
 }
 
@@ -1034,13 +1041,12 @@ footer.footer.genLayout .theend > p {
   max-width: 800px;         /* keep paragraph from stretching too wide */
   margin: 0 auto;           /* center horizontally */
   text-align: center;       /* balanced look */
-  color: #333;              /* adjust as needed for your theme */
+  color: var(--main-color);              /* adjust as needed for your theme */
   padding: 0 20px;          /* side spacing for small screens */
 }
 
 
 .clientdetails {
-    /* border: 2px solid greenyellow; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1049,7 +1055,7 @@ footer.footer.genLayout .theend > p {
 
 .clientdetails > input {
     /* border: red solid 2px; */
-    border: 5px solid #381301;
+    border: 4px solid #086252;
     background: none;
     border-top: none;
     border-right: none;
@@ -1060,7 +1066,7 @@ footer.footer.genLayout .theend > p {
     padding: 1rem 2rem;
 }
  .clientdetails > textarea {
-    border: 4px solid #381301;
+    border: 4px solid #086252;
     border-top: none;
     border-right: none;
     background: none;
@@ -1074,7 +1080,7 @@ footer.footer.genLayout .theend > p {
 }
 
 .clientdetails > button > span {
-    border: 4px solid #381301;
+    border: 4px solid #086252;
     padding: 1rem 2rem;
     text-decoration: none;
     border-top: none;
@@ -1084,17 +1090,40 @@ footer.footer.genLayout .theend > p {
     font-weight: 600;
 }
 
-.footer {
+
+footer.footer.genLayout { 
+    --main-color: #ffece1;
+    --bg-color: #086252;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
     text-align: center;
     font-size: 13px;
-    color: #381301;
+   color: var(--main-color);
     margin-top: 3rem;
-    background-color: #381301;
+    background-color: var(--bg-color);
 }
+
+footer.footer.genLayout > a {
+    text-decoration: none;
+    color: var(--main-color);
+    font-weight: 500;
+    font-size: large;
+    transition: color 0.3s ease;
+}
+
+footer.footer.genLayout > a:hover {
+    color: #95e5c8;
+    text-shadow: 0 0 5px rgba(149, 246, 210, 0.7);
+    transform: scale(1.2);
+    transition: color 0.3s ease;
+}
+
 /* Social Icons */
 footer.footer.genLayout .media {
   margin: 1rem 0;
-  color: white;
+  color: red;
 }
 
 footer.footer.genLayout .media > a {
@@ -1104,27 +1133,21 @@ footer.footer.genLayout .media > a {
 }
 
 footer.footer.genLayout .media a:hover {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 10px #ffb366);
+  /* transform: scale(1.2); */
+  filter: drop-shadow(0 0 10px #8de1d2);
 }
 
 
-.theend {
+footer.footer.genLayout .media .theend > span {
+    --main-color: #ffece1; 
+    --bg-color: #086252;
      display: flex;
      justify-content: space-evenly;
+     font-size: 0.9rem;
+    font-weight: 500;
+     color: var(--main-color);
 }
 
-footer.footer.genLayout .theend > img {
-  width: 24px;
-  height: auto;
-  margin-bottom: 0.5rem;
-  color: white;
-}
-
-.theend > img > span {
-    color: #ffece1;
-    font-family: "Montserrat", sans-serif;   
-}
 
 .thedemo {
      background-image: url(./image/plain\ background\ with\ eco\ design.jpeg);

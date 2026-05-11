@@ -75,7 +75,7 @@
       <div id="formMessage"></div>
       <div id="customAlert">
   <div class="alertBox">
-    <p id="alertMessage">✅ Thank you — you'll hear from me soon!</p>
+    <p id="alertMessage">Thank you — you'll hear from me soon!</p>
     <button id="closeAlert">OK</button>
   </div>
 </div>
@@ -96,21 +96,20 @@
           <div class="media">
             <a href="https://mail.google.com/mail/u/0/" target="_blank"><img src="./image/@logo.png" alt="icon"></a>
             <a href="https://github.com/ldeji?tab=repositories" target="_blank"><img src="./image/gitHub logo.png" alt="github"></a>
-            <a href="https://www.linkedin.com/in/peleowo-lateef-632257b1/" target="_blank"><img src="./image/linkedin logo.png" alt="linkedin"></a>
+            <a href="https://www.linkedin.com/in/peleowo-lateef-632257b1/" target="_blank"><img src="./image/linkedin logo.png" alt=""></i></a>
           </div>
 
           <div class="theend">
-            <img src="./image/copyright1.png" alt="copy">
-            <span><p>2026 Peleowo Lateef All Rights Reserved</p></span>
+            <span><p>&copy;2026 Peleowo Lateef All Rights Reserved</p></span>
           </div>
-        </footer><br><br><br><br>
+        </footer>
       </form>
     </section>
 
     <p id="formMessage" style="display:none; color: green; font-weight: bold; margin-top: 10px;"></p>
  <script>
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("✅ Custom alert script loaded");
+  console.log("Custom alert script loaded");
 
   const form = document.querySelector("form");
   const alertBox = document.getElementById("customAlert");
@@ -129,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (response.ok) {
-        showAlert("✅ Thank you — you'll hear from me soon!");
+        showAlert("Thank you for subscribing to my newsletter!");
         form.reset();
       } else {
         showAlert("❌ There was an error. Try again!");
