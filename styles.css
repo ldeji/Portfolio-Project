@@ -617,7 +617,7 @@ body {
                  /* PICTURES IN FLEX WRAP*/
 .image-gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 
   column-gap: 40px; /* X-axis gap */
   row-gap: 40px;    /* Y-axis gap */
@@ -682,7 +682,7 @@ body {
   border-radius: 12px;
   opacity: 1;
   transition: opacity 0.4s ease, transform 2s ease;
-  transform: translateX(100%);
+  transform: translateY(100%);
 }
 
 /* Hover effect */
@@ -692,7 +692,7 @@ body {
 
 .image-card:hover .caption {
   opacity: 10;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 .caption > h3 {
