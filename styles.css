@@ -686,7 +686,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #ffece1;
+  background: #b8f7d488;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   color: black;
   display: flex;
   flex-direction: column; /* title on top, text below */
@@ -1477,13 +1479,15 @@ i:hover{
     display: none;
     position: absolute;
     top: 80px;
-    right: 0;
+    right: -100px;
     flex-direction: column;
-    background: #fff;
+    background: #08625122;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     width: 220px;
     padding: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(143, 95, 95, 0.068);
+    border-radius: 12px;
     text-align: center;
   }
 
