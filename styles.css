@@ -141,9 +141,8 @@ body {
 }
 
 
-/* =========================
-   TICKER / MARQUEE
-========================= */
+  
+     /* MODERN PROJECT TICKER  */
 .ticker-wrapper {
   position: fixed;
   top: 100px;
@@ -156,118 +155,100 @@ body {
     #0f766e,
     #ecfdf5
   );
+
   border-top: 1px solid rgba(255,255,255,0.08);
   border-bottom: 1px solid rgba(255,255,255,0.08);
-  padding: 14px 0;
-  z-index: 999;
-  backdrop-filter: blur(10px);
+
+  padding: 12px 0;
+
+  z-index: 998;
 }
 
-/* =========================
-   MOVING TRACK
-========================= */
+/* Moving Track */
+
 .ticker {
   display: flex;
   align-items: center;
   width: max-content;
-  animation: tickerMove 35s linear infinite;
+
   gap: 22px;
+
+  animation: tickerScroll 38s linear infinite;
 }
 
-/* Pause animation on hover */
+/* Pause on Hover */
+
 .ticker:hover {
   animation-play-state: paused;
 }
 
-/* =========================
-   PROJECT CARD
-========================= */
-.project-item {
-  display: flex;
-  align-items: center;
+/* Project Card */
+
+.project-item,
+.ticker span {
+  flex-shrink: 0;
 }
 
-.project-item a,
-.ticker span a {
+/* Link Styling */
+
+.ticker a {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 
   text-decoration: none;
-  color: #ffffff;
-
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255,255,255,0.12);
 
   padding: 10px 16px;
+
+  background: rgba(255,255,255,0.12);
+
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255,255,255,0.15);
+
   border-radius: 999px;
 
-  backdrop-filter: blur(12px);
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
 
   transition:
     transform 0.3s ease,
     background 0.3s ease,
-    border 0.3s ease,
-    box-shadow 0.3s ease;
-
-  box-shadow:
-    0 4px 20px rgba(0,0,0,0.12);
-}
-
-/* Hover Effect */
-.project-item a:hover,
-.ticker span a:hover {
-  transform: translateY(-4px) scale(1.02);
-
-  background: rgba(255,255,255,0.14);
-
-  border-color: rgba(255,255,255,0.25);
-
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.18);
-}
-
-/* =========================
-   PROJECT IMAGE
-========================= */
-.ticker img {
-  width: 58px;
-  height: 58px;
-
-  object-fit: cover;
-
-  border-radius: 14px;
-
-  border: 2px solid rgba(255,255,255,0.15);
-
-  flex-shrink: 0;
-
-  transition:
-    transform 0.3s ease,
     border 0.3s ease;
 }
 
-.project-item a:hover img,
-.ticker span a:hover img {
-  transform: scale(1.06);
+/* Hover Effect */
 
-  border-color: rgba(255,255,255,0.4);
+.ticker a:hover {
+  transform: translateY(-3px);
+
+  background: rgba(255,255,255,0.2);
+
+  border-color: rgba(255,255,255,0.25);
 }
 
-/* =========================
-   TEXT
-========================= */
-.ticker a {
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  white-space: nowrap;
+/* Thumbnail Images */
+
+.ticker img {
+  width: 42px;
+  height: 42px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 2px solid rgba(255,255,255,0.25);
+
+  flex-shrink: 0;
 }
 
-/* =========================
-   INFINITE ANIMATION
-========================= */
-@keyframes tickerMove {
+/* Smooth Infinite Animation */
+
+@keyframes tickerScroll {
+
   0% {
     transform: translateX(0);
   }
@@ -285,6 +266,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
+    margin-top: 8rem;
 }
 
 @keyframes glowLine {
@@ -299,7 +281,7 @@ body {
   gap: 2rem;
   margin-top: 12rem;
   background-color: #086252; 
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 2rem;
 }
 
@@ -383,11 +365,6 @@ body {
   transition: all 0.4s ease;
 }
  
-.rightRoom > img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(204, 56, 56, 0.7);
-}
-
 /* ------ BANNER WRITE-UP---- */
 .bannerWriteup {
   text-align: center;
@@ -900,7 +877,7 @@ body {
   text-align: center;
   margin: 0 auto;
   padding: 50px 60px;
-  margin-top: 5rem;
+  margin-top: 8rem;
 }
 
 .studio h3 {
@@ -1336,14 +1313,38 @@ i:hover{
   }
 }
 
-                           /* small screen    Mobile View     */
+                           /* small screen    Mobile View   TICKER IS HERE  */
 @media (max-width: 600px) {
   .apartment {
     flex-direction: column;
     align-items: flex-start;
   }
+  .ticker-wrapper {
+    top: 90px;
+    padding: 8px 0;
+  }
 
+  .ticker {
+    gap: 14px;
+    animation-duration: 26s;
+  }
 
+  .ticker a {
+    gap: 10px;
+
+    padding: 7px 12px;
+
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .ticker img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+                         /* TABLET TO MOBILE VIEW    TICKER IS HERE  HAMBURGER IS HERE */
 @media (max-width: 900px) {
 
   /* Show Hamburger */
@@ -1361,8 +1362,9 @@ i:hover{
 
     width: 250px;
 
-    background: rgba(177, 255, 241, 0.087);
+    background: rgba(178, 236, 226, 0.116);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 
     flex-direction: column;
     align-items: flex-start;
@@ -1390,8 +1392,8 @@ i:hover{
 
     padding: 12px 0;
 
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 30px;
+    font-weight: 900;
 
     color: #222;
     text-decoration: none;
@@ -1414,115 +1416,28 @@ i:hover{
     padding: 14px 20px;
   }
 
- .ticker-wrapper {
-    top: 75px;
+   .ticker-wrapper {
+    top: 70px;
     padding: 10px 0;
   }
 
   .ticker {
-    gap: 14px;
-    animation-duration: 28s;
-  }
-
-  .project-item a,
-  .ticker span a {
-    padding: 8px 12px;
-    gap: 10px;
-  }
-
-  .ticker img {
-    width: 45px;
-    height: 45px;
-    border-radius: 10px;
+    gap: 18px;
+    animation-duration: 32s;
   }
 
   .ticker a {
+    padding: 8px 14px;
     font-size: 13px;
   }
-}
-
-@media (max-width: 500px) {
-
-  .ticker-wrapper {
-    top: 65px;
-  }
 
   .ticker img {
-    width: 38px;
-    height: 38px;
-  }
-
-  .ticker a {
-    font-size: 12px;
-  }
-
-  .project-item a,
-  .ticker span a {
-    padding: 7px 10px;
+    width: 36px;
+    height: 36px;
   }
 }
 
-               /* ROOm  */
-  .room {
-    padding: 1.5rem 1rem;
-    margin-top: 7rem;
-     flex-direction: column;
-  }
-  .leftRoom h1 {
-    font-size: 1.6rem;
-  }
    
-  .leftRoom > h5 {
-    font-size: 0.9rem;
-  }
-
-   .rightRoom > img {
-    max-width: 250px;
-
-  }
-  .bannerWriteup > span > p {
-    font-size: 13px;
-  }
-
-   .icons {
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .icons > img {
-    width: 32px;
-    height: 32px;
-    padding: 5px;
-  }
-
-  .image-gallery {
-    grid-template-columns: 1fr;
-    gap: 25px; /* add more space between items */
-    padding: 0 10px; /* keep content away from edges */
-  }
-
-  
-  .image-card {
-    max-width: 100%;
-  }
-  .image-card img {
-    height: auto;
-  }
-
-  .caption h3 {
-    font-size: 0.95;
-    margin-bottom: 2px;
-  }
-
-  .caption p {
-    font-size: 0.95rem;
-  }
-  }
-
-   .caption > a {
-    color: #fff;
-    font-size: 10px;
-   }    
 
                   /* SMALL SCREEN  */   /* SMALL SCREEN  */
 @media (max-width: 768px) {
@@ -1595,7 +1510,6 @@ i:hover{
     display: block;   /* ensures margin auto works */
   }
 
-
   .image-gallery {
     grid-template-columns: 1fr;
     gap: 25px; /* add more space between items */
@@ -1629,7 +1543,7 @@ i:hover{
   }
   }
       
-                          /* EXTRA SMALL SCREEN  */   /* EXTRA SMALL SCREEN  */
+                          /* EXTRA SMALL SCREEN  */ 
 @media (max-width: 480px) {
   #contactForm textarea {
     width: 95%;
@@ -1672,19 +1586,67 @@ i:hover{
   .image-gallery {
     grid-template-columns: 1fr;
   }
+
+    .image-card a {
+    font-size: 0.85rem;
+    padding: 7px 12px;
+  }
+                                 /* TICKER IS HERE   */
+.ticker-wrapper {
+    top: 85px;
+    padding: 12px 0;
+  }
+
+
+  .ticker a {                                      
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .ticker img {
+    width: 26px;
+    height: 26px;
+  }
+
+  .myPortfolio {
+    margin-top: 8rem;
+  } 
+
+                     
+                            /* ROOM  */
+  .room {
+    padding: 1.5rem 1rem;
+    margin-top: 8rem;
+     flex-direction: column;
+  }
+  .leftRoom h1 {
+    font-size: 1.6rem;
+  }
+   
+  .leftRoom > h5 {
+    font-size: 0.9rem;
+  }
+
+  .bannerWriteup > span > p {
+    font-size: 13px;
+  }
+
+   .icons {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .icons > img {
+    width: 32px;
+    height: 32px;
+    padding: 5px;
+  }
 }
 
 @media (max-width: 768px) {
   .image-card a {
     font-size: 0.9rem; /* slightly smaller but still readable */
     padding: 8px 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .image-card a {
-    font-size: 0.85rem;
-    padding: 7px 12px;
   }
 }
 
