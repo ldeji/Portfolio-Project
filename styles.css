@@ -106,28 +106,30 @@ body {
 .hamburger {
   display: none;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 5px;
 
-  width: 28px;
-  height: 20px;
+  width: 30px;
+  height: 24px;
 
   cursor: pointer;
-  z-index: 2000;
+  z-index: 2001;
 }
 
 .hamburger span {
   width: 100%;
   height: 3px;
-  background: #000;
+
+  background: #086252;
   border-radius: 20px;
 
   transition: all 0.4s ease;
 }
 
-/* ACTIVE MENU */
+/* Animate to X */
 
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 6px);
+  transform: translateY(8px) rotate(45deg);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -135,84 +137,137 @@ body {
 }
 
 .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -6px);
+  transform: translateY(-8px) rotate(-45deg);
 }
+
 
 /* =========================
    TICKER / MARQUEE
 ========================= */
-
 .ticker-wrapper {
   position: fixed;
   top: 100px;
   left: 0;
   width: 100%;
-
   overflow: hidden;
-  white-space: nowrap;
-
-  background: linear-gradient(to right, #086252, #eafbf6);
-
-  border-top: 1px solid rgba(0,0,0,0.06);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-
-  padding: 12px 0;
-
+  background: linear-gradient(
+    to right,
+    #064e3b,
+    #0f766e,
+    #ecfdf5
+  );
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 14px 0;
   z-index: 999;
+  backdrop-filter: blur(10px);
 }
 
-/* Moving Content */
-
+/* =========================
+   MOVING TRACK
+========================= */
 .ticker {
-  display: inline-block;
-  white-space: nowrap;
-
-  animation: tickerMove 30s linear infinite;
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: tickerMove 35s linear infinite;
+  gap: 22px;
 }
 
-/* Pause on hover */
-
+/* Pause animation on hover */
 .ticker:hover {
   animation-play-state: paused;
 }
 
-.ticker span {
-  display: inline-flex;
+/* =========================
+   PROJECT CARD
+========================= */
+.project-item {
+  display: flex;
   align-items: center;
+}
 
-  margin-right: 45px;
+.project-item a,
+.ticker span a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 
-  padding: 10px 18px;
+  text-decoration: none;
+  color: #ffffff;
 
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255,255,255,0.12);
 
+  padding: 10px 16px;
   border-radius: 999px;
 
-  font-size: 14px;
+  backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border 0.3s ease,
+    box-shadow 0.3s ease;
+
+  box-shadow:
+    0 4px 20px rgba(0,0,0,0.12);
+}
+
+/* Hover Effect */
+.project-item a:hover,
+.ticker span a:hover {
+  transform: translateY(-4px) scale(1.02);
+
+  background: rgba(255,255,255,0.14);
+
+  border-color: rgba(255,255,255,0.25);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.18);
+}
+
+/* =========================
+   PROJECT IMAGE
+========================= */
+.ticker img {
+  width: 58px;
+  height: 58px;
+
+  object-fit: cover;
+
+  border-radius: 14px;
+
+  border: 2px solid rgba(255,255,255,0.15);
+
+  flex-shrink: 0;
+
+  transition:
+    transform 0.3s ease,
+    border 0.3s ease;
+}
+
+.project-item a:hover img,
+.ticker span a:hover img {
+  transform: scale(1.06);
+
+  border-color: rgba(255,255,255,0.4);
+}
+
+/* =========================
+   TEXT
+========================= */
+.ticker a {
+  font-size: 15px;
   font-weight: 600;
-  color: #0f172a;
-
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-
-  transition: transform 0.3s ease;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
 }
 
-.ticker span:hover {
-  transform: translateY(-2px);
-}
-
-/* Optional Link Styling */
-
-.ticker span a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Infinite Animation */
-
+/* =========================
+   INFINITE ANIMATION
+========================= */
 @keyframes tickerMove {
-
   0% {
     transform: translateX(0);
   }
@@ -222,6 +277,7 @@ body {
   }
 }
 
+
 /* --------NAV BAR------ */ */
 .apartment {
     /* border: blue 3px solid; */
@@ -229,7 +285,6 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
-    margin-top: 10rem;
 }
 
 @keyframes glowLine {
@@ -242,7 +297,7 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  margin-top: 10rem;
+  margin-top: 12rem;
   background-color: #086252; 
   border-radius: 15px;
   padding: 2rem;
@@ -360,7 +415,7 @@ body {
 .bannerWriteup > span > p {
   font-size: 18px;
   line-height: 1.6;
-  color: #381301;
+  color: #086252;
   margin: 2rem 0;
 }
 
@@ -704,7 +759,7 @@ body {
   text-align: center;
   font-size: 1.8rem;
   color: #33705a;
-  margin-top: 10rem;   
+  margin-top: 12rem;   
 }  
 
 
@@ -1238,13 +1293,6 @@ i:hover{
   transform: translate(-50%, -50%) scale(1.05);
 }
 
-.hamburger.active span:nth-child(1),
-.hamburger.active span:nth-child(2),
-.hamburger.active span:nth-child(3) {
-  background: #000 !important;
-  position: relative !important;
-  z-index: 2000 !important;
-}
 
 /*RESPONSIVE DESIGN */   /*RESPONSIVE DESIGN */  /*RESPONSIVE DESIGN */
 
@@ -1295,78 +1343,130 @@ i:hover{
     align-items: flex-start;
   }
 
-  .header {
-    padding: 14px 20px;
+
+@media (max-width: 900px) {
+
+  /* Show Hamburger */
+  .hamburger {
+    display: flex;
   }
 
- .logo img {
-    width: 100px;
-  }
-
+  /* Mobile Menu */
   .links {
-    position: absolute;
+    display: flex; /* IMPORTANT */
+    position: fixed;
 
     top: 75px;
     right: -100%;
 
+    width: 250px;
+
+    background: rgba(177, 255, 241, 0.087);
+    backdrop-filter: blur(12px);
+
     flex-direction: column;
     align-items: flex-start;
-
-    width: 240px;
-
-    background: #FEF2DE;
+    gap: 10px;
 
     padding: 25px;
 
-    border-radius: 16px;
+    border-radius: 18px;
 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 
     transition: right 0.4s ease;
+
+    z-index: 2000;
   }
 
+  /* Active Menu */
   .links.active {
     right: 20px;
   }
 
   .links a {
+    display: block;
     width: 100%;
+
+    padding: 12px 0;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    color: #222;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+  }
+
+  /* Hover Effect */
+  .links a:hover {
+    padding-left: 8px;
+  }
+
+  /* Reduce logo size */
+  .logo img {
+    width: 95px;
+  }
+
+  /* Header spacing */
+  .header {
+    padding: 14px 20px;
+  }
+
+ .ticker-wrapper {
+    top: 75px;
     padding: 10px 0;
   }
 
-   .links a:hover {
-    color: #b66a2b;
+  .ticker {
+    gap: 14px;
+    animation-duration: 28s;
   }
-  
-  .links.show {
-    display: flex;
-    animation: slideDown 0.4s ease forwards;
+
+  .project-item a,
+  .ticker span a {
+    padding: 8px 12px;
+    gap: 10px;
   }
- 
-  @keyframes slideDown {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
+  .ticker img {
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
   }
+
+  .ticker a {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 500px) {
 
   .ticker-wrapper {
-    top: 70px;
-    padding: 10px 0;
+    top: 65px;
   }
 
-  .ticker span {
-    margin-right: 25px;
+  .ticker img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .ticker a {
     font-size: 12px;
-    padding: 8px 14px;
   }
 
+  .project-item a,
+  .ticker span a {
+    padding: 7px 10px;
+  }
+}
+
+               /* ROOm  */
   .room {
     padding: 1.5rem 1rem;
+    margin-top: 7rem;
+     flex-direction: column;
   }
   .leftRoom h1 {
     font-size: 1.6rem;
@@ -1377,12 +1477,12 @@ i:hover{
   }
 
    .rightRoom > img {
-    max-width: 260px;
+    max-width: 250px;
+
   }
   .bannerWriteup > span > p {
     font-size: 13px;
   }
-
 
    .icons {
     justify-content: center;
@@ -1418,6 +1518,7 @@ i:hover{
     font-size: 0.95rem;
   }
   }
+
    .caption > a {
     color: #fff;
     font-size: 10px;
@@ -1573,27 +1674,6 @@ i:hover{
   }
 }
 
-                 /* Tablet View */      /* Tablet View */      
-                           
-/* Responsive Menu */
-@media (max-width: 900px) {
-  
-}
-
-/* Hide hamburger on larger screens */
-@media (min-width: 769px) {
-  .hamburger {
-    display: none !important;
-  }
-}
-
-/* Show hamburger on mobile and tablet */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex !important;
-  }
-}
-
 @media (max-width: 768px) {
   .image-card a {
     font-size: 0.9rem; /* slightly smaller but still readable */
@@ -1607,47 +1687,6 @@ i:hover{
     padding: 7px 12px;
   }
 }
-
-
-  /* NAV RESPONSIVE FIX */
-
-/* Default (desktop) — show links, hide hamburger */
-@media (min-width: 769px) {
-
-  .hamburger {
-    display: none !important;
-  }
-}
-
-/* NAVBAR RESPONSIVE BEHAVIOR */
-
-/* Desktop (min-width: 769px) */
-@media (min-width: 769px) {
-  .hamburger {
-    display: none !important;
-  }
-}
-
-
-/* Desktop (min-width: 769px) */
-@media (min-width: 769px) {
- .hamburger {
-    display: none !important;
-  }
-}
-
-/* Mobile (max-width: 768px) */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
-    cursor: pointer;
-  }
-}
-
-      /* FOOTER */
 
       @media (max-width: 768px) {
   .footer {
