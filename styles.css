@@ -30,7 +30,7 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  padding: 14px 5%;
+  padding: 15px 2%;
   box-sizing: border-box;
 }
 
@@ -575,6 +575,10 @@ body {
   box-shadow: 0 0 15px rgba(255, 236, 225, 0.6);
 }
 
+.BannerAndAbility {
+ background-image: url(image/BackdropForTaxiApp.webp);
+}
+
 /* Container for Ability + Skills sections */
 .ability { 
   margin-top: -5px;
@@ -634,7 +638,6 @@ body {
     padding: 2rem;
 } 
 
-
        /* SKILL BOLD LABEL HEADING  */
 .skills {
   text-align: center;
@@ -643,8 +646,6 @@ body {
   margin-right: 2rem;
 }
    
-
-
 .skills h3, .ability h3, .current h3 {
   text-align: center;
   font-size: 2rem;
@@ -652,7 +653,6 @@ body {
   margin-bottom: 2rem;
 } 
  
-
       /* ALL SLILLS STYLING */
 .allSkills .current {
   display: grid;
@@ -840,7 +840,7 @@ body {
 }
 
 .taxi {
-    background-image: url(./image/plain\ background\ with\ eco\ design.jpeg);
+    background-image: url(image/BackdropForTaxiApp.webp);
     padding: 2rem;
     height: 100vh;
 }
@@ -851,6 +851,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: -3rem;
+    gap: 1rem;
 }
 
 .theyummy > label:first-child {
@@ -883,13 +884,13 @@ body {
   text-align: center;
   margin: 0 auto;
   padding: 50px 60px;
-  margin-top: 2rem;
+  margin-top: 8rem;
 }
 
 .studio h3 {
   font-size: 2rem;
   letter-spacing: 2px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   color: #086252;
 }
 
